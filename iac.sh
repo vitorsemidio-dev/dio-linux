@@ -1,7 +1,6 @@
 #!/bin/bash
 
 # Criacao diretorios
-
 mkdir /publico
 mkdir /adm
 mkdir /ven
@@ -31,7 +30,6 @@ useradd amanda -c "Amanda" -m -G GRP_SEC -p $(openssl passwd -6 Senha123) -s /bi
 useradd rogerio -c "Rogério" -m -G GRP_SEC -p $(openssl passwd -6 Senha123) -s /bin/bash
 
 
-
 # Permissao
 chmod 777 /publico
 chmod 770 /adm
@@ -44,5 +42,10 @@ chgrp GRP_ADM /adm
 chgrp GRP_VEN /ven
 chgrp GRP_SEC /sec
 
+
+# Dono diretorios
+chown root:GRP_ADM /adm
+chown root:GRP_VEN /ven
+chown root:GRP_SEC /sec
 
 
